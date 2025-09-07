@@ -61,5 +61,14 @@ public class WarmUp {
 		System.out.println("Before: " + Arrays.toString(words));
 		reverseArray(words);
 		System.out.println("After: " + Arrays.toString(words));
+		double[] array1 = {1, 2, 3, 4, 5};
+		double[] answer = addArraysSameLength(array1, array1);
+		System.out.println(Arrays.toString(answer));
+		Card[] cards = new Card[4];
+        cards[0] = new Card(1, "clubs");
+        cards[1] = new Card(1, "hearts");
+		cards[2] = new Card(3, "hearts");
+        cards[3] = new Card(2, "diamonds");
+        System.out.println(countHearts(cards));
 	}
 }
