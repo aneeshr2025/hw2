@@ -129,7 +129,17 @@ public class Card {
 	 */
 	public int getFlippyCardValue(){
 		//TODO: Fill in good stuff here!
-		return 0;
+		if(number == 1){
+			return 11;
+		}else if( number >= 2 && number <= 10){
+			return number;
+		}else if( number == 11){
+			return 10;
+		}else if( number == 12 ){
+			return 10;
+		}else{
+			return 10;
+		}
 	}
 	
 	/**
@@ -139,6 +149,13 @@ public class Card {
 	 */
 	public boolean isRedCard(){
 		//TODO: Fill in good stuff here!
-		return false;
+		if (suit.equals("red"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

@@ -22,6 +22,7 @@ public class FlippyCards {
 	 */
 	public FlippyCards(int numCards){
 		// TODO: Fill in good stuff here!
+		this.cards = new Card[numCards];
 	}
 
 	/**
@@ -31,7 +32,7 @@ public class FlippyCards {
 	 */
 	public Card getCard(int index) {
 		// TODO: Fill in good stuff here!
-		return null;
+		return cards[index];
 	}
 	
 	/**
@@ -42,6 +43,7 @@ public class FlippyCards {
 	 */
 	public void flipCard(int cardIndex) {
 		//TODO: Fill in good stuff here!
+		cards[cardIndex].flip();
 	}
 
 	/**
@@ -52,7 +54,19 @@ public class FlippyCards {
 	 */
 	public int calculateOptimalScore(){
 		//TODO: Fill in good stuff here!
-		return 0;
+		int sum = 0;
+		for (Card c : cards)
+		{
+			if (c.isRedCard())
+			{
+				sum += c.getFlippyCardValue();
+			}
+			else
+			{
+				sum -= c.getFlippyCardValue();
+			}
+		}
+		return sum;
 	}
 
 
@@ -64,8 +78,24 @@ public class FlippyCards {
 	 */
 	public int faceUpTotal(){
 		//TODO: Fill in good stuff here!
-		return 0;
+		int sum = 0;
+		for (Card c : cards)
+		{
+			if (c.isFaceUp())
+			{
+				if (c.isRedCard())
+				{
+					sum += c.getFlippyCardValue();
+				}
+				else
+				{
+					sum -= c.getFlippyCardValue();
+				}
+			}
+		}
+		return sum;
 	}
+		
 
 	/**
 	 * Calculate the flippy card score for the cards that are
@@ -75,9 +105,29 @@ public class FlippyCards {
 	 */
 	public int faceDownTotal(){
 		//TODO: Fill in good stuff here!
-		return 0;
+		int sum = 0;
+		for (Card c : cards)
+		{
+			if (!c.isFaceUp())
+			{
+				if (c.isRedCard())
+				{
+					sum += c.getFlippyCardValue();
+				}
+				else
+				{
+					sum -= c.getFlippyCardValue();
+				}
+			}
+		}
+		return sum;
 	}
-
+	
 
 	//TODO: Add a toString method here!
+	public String toString()
+	{
+		return "a";
+	}
 }
+
