@@ -149,7 +149,7 @@ public class Card {
 	 */
 	public boolean isRedCard(){
 		//TODO: Fill in good stuff here!
-		if (suit.equals("red"))
+		if (suit.equals("hearts") || suit.equals("diamonds"))
 		{
 			return true;
 		}
@@ -158,4 +158,10 @@ public class Card {
 			return false;
 		}
 	}
+
+	public static void main(String[] args)
+	 {
+        Card c = new Card(6, "hearts"); 
+        System.out.println(c + " value: " + c.getFlippyCardValue() + ", Is red? " + c.isRedCard());
+    }
 }
