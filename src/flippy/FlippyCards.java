@@ -70,10 +70,6 @@ public class FlippyCards {
 			{
 				sum += c.getFlippyCardValue(); // adds red card values
 			}
-			else
-			{
-				sum -= c.getFlippyCardValue(); // subtracts black card values
-			}
 		}
 		return sum;
 	}
