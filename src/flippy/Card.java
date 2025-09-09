@@ -3,14 +3,11 @@ package flippy;
 /**
  * A card class representing a standard playing card with
  * numbers 2-10, Jack, Queen, King, Ace and four suits.
- * 
- *
  */
 public class Card {
 	// min/max for the card number range
 	private static final int MIN_NUMBER = 1;
 	private static final int MAX_NUMBER = 13;
-
 	private int number;
 	private String suit;
 	private boolean faceUp = false; // whether the card is face up
@@ -18,7 +15,6 @@ public class Card {
 	/**
 	 * Create a new card with number and suit.  If the a valid
 	 * suit/number is not input, the card defaults to 1 of hearts.
-	 * 
 	 * @param number the card number
 	 * @param suit the card suit
 	 */
@@ -51,7 +47,6 @@ public class Card {
 	/**
 	 * Returns the cards number, changing Jack, Queen, King, Ace
 	 * appropriately.
-	 * 
 	 * @return the cards number
 	 */
 	public String getNumber(){
@@ -99,7 +94,6 @@ public class Card {
 
 	/**
 	 * Check to make sure the card number is valid
-	 * 
 	 * @param num potential card number
 	 * @return whether the card number is valid
 	 */
@@ -109,7 +103,6 @@ public class Card {
 
 	/**
 	 * Check to make sure the suit is valid
-	 * 
 	 * @param s potential suit
 	 * @return whether the suit is valid
 	 */
@@ -124,7 +117,6 @@ public class Card {
 	 * The value of this card for the flippy card game.
 	 * Numbers have their number as the value, Ace is 11,
 	 * and Jack, Queen, and King are 10.
-	 * 
 	 * @return the flippy card value
 	 */
 	public int getFlippyCardValue(){
@@ -144,7 +136,6 @@ public class Card {
 	
 	/**
 	 * Whether the suit is red or not.
-	 * 
 	 * @return whether or not the card is red
 	 */
 	public boolean isRedCard(){

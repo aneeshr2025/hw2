@@ -14,7 +14,6 @@ public class CardDealer{
 
 	/**
 	 * Creates a new card dealer with numDecks decks in the deck
-	 * 
 	 * @param numDecks the number of card decks to use
 	 */
 	public CardDealer(int numDecks){

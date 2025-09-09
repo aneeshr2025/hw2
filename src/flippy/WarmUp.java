@@ -6,7 +6,6 @@ public class WarmUp {
 	
 	/**
 	 * Counts how many cards are hearts
-	 * 
 	 * @param cards an array of cards
 	 * @return the number of cards that are hearts
 	 */
@@ -27,9 +26,8 @@ public class WarmUp {
 	/**
 	 * Add the elements of two arrays of the same length.  The function assumes that 
 	 * the arrays are of the same length
-	 * 
-	 * @param array1
-	 * @param array2
+	 * @param array1 an inputed array of doules
+	 * @param array2 a inputed array of doubles
 	 * @return a new array that is the element-wise sum of the input arrays 
 	 */
 	public static double[] addArraysSameLength(double[] array1, double[] array2){
@@ -45,6 +43,11 @@ public class WarmUp {
 	
 		
 	// TODO: write the reverseArray method, including method header and JavaDoc comments
+	/**
+	 * Reverses elements in an array
+	 * @param s an array of Strings
+	 * @return a new array of Strings that contain elements in reversed order 
+	 */
 	public static String[] reverseArray(String[] s)
 	{
 		String temp = "";

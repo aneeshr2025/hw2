@@ -7,9 +7,7 @@ package flippy;
  * Red cards (hearts and diamonds) award positive points, while black cards 
  * (clubs and spades) award negative points.  Cards 2-10 have points worth 
  * their face value, Jack, Queen and King 10 and Ace 11.
- * 
- * @author 
- *
+ * @author Aneesh Raghavan
  */
 public class FlippyCards {
 	private Card[] cards; // the cards for the game
@@ -17,7 +15,6 @@ public class FlippyCards {
 	/**
 	 * Create a new flippy card game state, which consists of the
 	 * numCards cards for the game.
-	 * 
 	 * @param numCards number of cards in the game
 	 */
 	public FlippyCards(int numCards){
@@ -28,7 +25,7 @@ public class FlippyCards {
 		{
 			if (deck.hasNext())
 			{
-				cards[i] = deck.next();
+				cards[i] = deck.next(); // go through cards in deck and assign the suit and value
 			}
 		}
 
@@ -47,7 +44,6 @@ public class FlippyCards {
 	/**
 	 * Flip the card over at this index.  Card indices
 	 * start at 0 and go up the cards.length-1
-	 * 
 	 * @param cardIndex the index of the card to flip over
 	 */
 	public void flipCard(int cardIndex) {
@@ -58,7 +54,6 @@ public class FlippyCards {
 	/**
 	 * Calculate the best possible score for the
 	 * current cards.
-	 * 
 	 * @return the optimal score
 	 */
 	public int calculateOptimalScore(){
@@ -78,7 +73,6 @@ public class FlippyCards {
 	/**
 	 * Calculate the flippy card score for the cards that are
 	 * face up.  
-	 * 
 	 * @return the flippy card score for faceup cards
 	 */
 	public int faceUpTotal(){
@@ -105,7 +99,6 @@ public class FlippyCards {
 	/**
 	 * Calculate the flippy card score for the cards that are
 	 * face down.  
-	 * 
 	 * @return the flippy card score for facedown cards
 	 */
 	public int faceDownTotal(){
@@ -128,25 +121,28 @@ public class FlippyCards {
 		return sum;
 	}
 	
-
+	/**
+	 * Returns concatinated string of the 5 cards and their values wheether face up or down
+	 * @return the concatinated string of the 5 cards and their values based on if they are face down or not
+	 */
 	//TODO: Add a toString method here!
 	public String toString()
 	{
 		String s = "";
 		for (int i = 0; i < cards.length; i++)
 		{
-			if (i == 0)
+			if (i == 0) // checking if first element
 			{
 				if (cards[i].isFaceUp())
 				{
-					s += cards[i].getNumber() + " of " + cards[i].getSuit() + " |";
+					s += cards[i].getNumber() + " of " + cards[i].getSuit() + " |"; // if face up, write out card description 
 				}
 				else
 				{
 					s += "FACE-DOWN" + " |";
 				}
 			}
-			else if (i == cards.length - 1)
+			else if (i == cards.length - 1) // checking if last element to not have ending "|""
 			{
 				if (cards[i].isFaceUp())
 				{
@@ -159,7 +155,7 @@ public class FlippyCards {
 			}
 			else
 			{
-				if (cards[i].isFaceUp())
+				if (cards[i].isFaceUp()) // checking if in between first and last 
 				{
 					s += " " + cards[i].getNumber() + " of " + cards[i].getSuit() + " |";
 				}
