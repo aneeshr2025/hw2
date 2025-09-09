@@ -171,5 +171,15 @@ public class FlippyCards {
 		}
 		return s;
 	}
+
+	public static void main(String[] args)
+	 {
+        FlippyCards c = new FlippyCards(5); 
+		c.flipCard(2);
+		System.out.println(c.calculateOptimalScore());
+		System.out.println(c.faceUpTotal());
+		System.out.println(c.faceDownTotal());
+        System.out.println(c);
+    }
 }
 
