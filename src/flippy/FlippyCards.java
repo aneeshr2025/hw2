@@ -22,12 +22,21 @@ public class FlippyCards {
 	 */
 	public FlippyCards(int numCards){
 		// TODO: Fill in good stuff here!
-		this.cards = new Card[numCards];
+		this.cards = new Card[numCards]; // numCards is length of cards array
+		CardDealer deck = new CardDealer(1);
+		for (int i = 0; i < numCards; i++)
+		{
+			if (deck.hasNext())
+			{
+				cards[i] = deck.next();
+			}
+		}
+
 	}
 
 	/**
 	 * Returns the flippy card at the given index 
-	 * 
+	 * @param index given index
 	 * @return the flippy card at the given index
 	 */
 	public Card getCard(int index) {
@@ -43,7 +52,7 @@ public class FlippyCards {
 	 */
 	public void flipCard(int cardIndex) {
 		//TODO: Fill in good stuff here!
-		cards[cardIndex].flip();
+		cards[cardIndex].flip(); // calls flip method in Card Class
 	}
 
 	/**
@@ -55,15 +64,15 @@ public class FlippyCards {
 	public int calculateOptimalScore(){
 		//TODO: Fill in good stuff here!
 		int sum = 0;
-		for (Card c : cards)
+		for (Card c : cards) //calculates optimal score looping through all cards
 		{
-			if (c.isRedCard())
+			if (c.isRedCard()) 
 			{
-				sum += c.getFlippyCardValue();
+				sum += c.getFlippyCardValue(); // adds red card values
 			}
 			else
 			{
-				sum -= c.getFlippyCardValue();
+				sum -= c.getFlippyCardValue(); // subtracts black card values
 			}
 		}
 		return sum;
@@ -81,7 +90,7 @@ public class FlippyCards {
 		int sum = 0;
 		for (Card c : cards)
 		{
-			if (c.isFaceUp())
+			if (c.isFaceUp()) // calculates sum for cards faced up
 			{
 				if (c.isRedCard())
 				{
@@ -108,7 +117,7 @@ public class FlippyCards {
 		int sum = 0;
 		for (Card c : cards)
 		{
-			if (!c.isFaceUp())
+			if (!c.isFaceUp()) // calculates sum for cards faced down
 			{
 				if (c.isRedCard())
 				{
@@ -127,7 +136,44 @@ public class FlippyCards {
 	//TODO: Add a toString method here!
 	public String toString()
 	{
-		return "a";
+		String s = "";
+		for (int i = 0; i < cards.length; i++)
+		{
+			if (i == 0)
+			{
+				if (cards[i].isFaceUp())
+				{
+					s += cards[i].getNumber() + " of " + cards[i].getSuit() + " |";
+				}
+				else
+				{
+					s += "FACE-DOWN" + " |";
+				}
+			}
+			else if (i == cards.length - 1)
+			{
+				if (cards[i].isFaceUp())
+				{
+					s += " " + cards[i].getNumber() + " of " + cards[i].getSuit();
+				}
+				else
+				{
+					s += " FACE-DOWN";
+				}
+			}
+			else
+			{
+				if (cards[i].isFaceUp())
+				{
+					s += " " + cards[i].getNumber() + " of " + cards[i].getSuit() + " |";
+				}
+				else
+				{
+					s += " FACE-DOWN" + " |";
+				}
+			}
+		}
+		return s;
 	}
 }
 

@@ -129,13 +129,13 @@ public class Card {
 	 */
 	public int getFlippyCardValue(){
 		//TODO: Fill in good stuff here!
-		if(number == 1){
+		if (number == 1){ // maps card number to value and returns it
 			return 11;
-		}else if( number >= 2 && number <= 10){
+		}else if (number >= 2 && number <= 10){
 			return number;
-		}else if( number == 11){
+		}else if (number == 11){
 			return 10;
-		}else if( number == 12 ){
+		}else if (number == 12 ){
 			return 10;
 		}else{
 			return 10;
@@ -149,11 +149,11 @@ public class Card {
 	 */
 	public boolean isRedCard(){
 		//TODO: Fill in good stuff here!
-		if (suit.equals("hearts") || suit.equals("diamonds"))
+		if (suit.equals("hearts") || suit.equals("diamonds")) // if card is red
 		{
 			return true;
 		}
-		else
+		else // card is black
 		{
 			return false;
 		}

@@ -10,14 +10,15 @@ public class WarmUp {
 	 * @param cards an array of cards
 	 * @return the number of cards that are hearts
 	 */
-	public static int countHearts(Card[] cards ){
+	public static int countHearts(Card[] cards )
+	{
 		// TODO: fill in the method!
 		int count = 0;
 		for (Card c:cards)
 		{
 			if (c.getSuit() == "hearts")
 			{
-				count += 1;
+				count += 1; // increments count and returns it
 			}
 		}
 		return count;
@@ -36,7 +37,7 @@ public class WarmUp {
 		double [] sum = new double[array1.length];
 		for (int i = 0; i < array1.length; i++)
 		{
-			sum[i] = array1[i] + array2[i];
+			sum[i] = array1[i] + array2[i]; // sum array is sum of ith spots in param arrays
 		}
 		return sum;
 		
@@ -47,16 +48,17 @@ public class WarmUp {
 	public static String[] reverseArray(String[] s)
 	{
 		String temp = "";
-		for (int i = 0; i < (s.length)/2; i++)
+		for (int i = 0; i < (s.length)/2; i++) // only going through half of the array
 		{
 			temp = s[i];
 			s[i] = s[s.length - i - 1];
-			s[s.length - i - 1] = temp;
+			s[s.length - i - 1] = temp; // switches spots to reverse the array
 		}
 		return s;
 	}
 
-	public static void main(String[] args){
+	public static void main(String[] args)
+	{
 		String[] words = {"I", "love", "my", "CS", "classes", "!"};
 		System.out.println("Before: " + Arrays.toString(words));
 		reverseArray(words);

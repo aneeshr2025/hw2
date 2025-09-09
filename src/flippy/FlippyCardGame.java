@@ -39,7 +39,6 @@ public class FlippyCardGame {
 		System.out.println("Best possible score: " + flippyCards.calculateOptimalScore());
 	}
 	
-	
 	public static void main(String[] args){
 		playGame(5);
 	}
